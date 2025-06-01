@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Me</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+  body, html {
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    background: rgba(255 255 255 / 0.85);
+    border-radius: 20px;
+    max-width: 900px;
+    padding: 40px 50px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    display: flex;
+    gap: 45px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .photo {
+    flex: 1 1 240px;
+    max-width: 240px;
+    border-radius: 50%;
+    border: 5px solid #ff9f67;
+    box-shadow: 0 10px 30px rgba(255, 159, 103, 0.6);
+    overflow: hidden;
+  }
+  .photo img {
+    width: 100%;
+    border-radius: 50%;
+    display: block;
+  }
+  .info {
+    flex: 2 1 400px;
+  }
+  .info h1 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #ff6f3c;
+  }
+  .info p {
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #444;
+  }
+  .btn-download {
+    background: linear-gradient(135deg, #ff6f3c, #ff9f67);
+    color: white;
+    padding: 14px 36px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 6px 18px rgba(255, 111, 60, 0.7);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-download:hover {
+    background: linear-gradient(135deg, #ff9f67, #ff6f3c);
+    box-shadow: 0 10px 30px rgba(255, 159, 103, 0.9);
+    transform: scale(1.05);
+  }
+  .btn-download:active {
+    transform: scale(0.95);
+  }
+  @media (max-width: 720px) {
+    .container {
+      flex-direction: column;
+      padding: 30px 25px;
+      max-width: 90vw;
+    }
+    .photo, .info {
+      flex: none;
+      max-width: 100%;
+    }
+    .photo {
+      margin: 0 auto 30px;
+      width: 180px;
+      height: 180px;
+    }
+    .info h1 {
+      text-align: center;
+    }
+    .info p {
+      text-align: center;
+    }
+    .btn-download {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="container" role="main" aria-label="About Me">
+    <div class="photo">
+      <img src="avatar.png" alt="Photo of Raju Bhai" />
+    </div>
+    <div class="info">
+      <h1>Rajendra Das</h1>
+      <p>Hi, I'm Rajendra Das, a passionate B.Tech Computer Science and Engineering student at Centurion University of Technology and Management, Paralakhemundi. I’m someone who believes technology isn’t just about writing code — it's about creating experiences, solving real-world problems, and making life better for people.</p>
+      <p>Over the past few years, I’ve developed strong foundations in web development, Python programming, and backend design. I enjoy working with technologies like React, Tailwind CSS, Flask, MySQL, and JavaScript, and I'm constantly experimenting with new frameworks and tools to sharpen my skillset.</p>
+      <p>I’m the kind of person who learns by doing. From developing personal portfolio sites to building full-stack apps for college projects, I love transforming ideas into interactive and purposeful products. I’m currently focused on building dynamic web apps that serve real needs — like my Timetable & Room Finder App and Learning Record Generator, which reflect my practical approach to development.</p>
+      <p>Apart from academics, I’m the founder of Syntax Squad, our college’s official tech club. It brings students together to build, learn, and grow through projects, bootcamps, and open-source contributions. I believe in leadership that uplifts others and creates a shared space for innovation.</p>
+      <p>Outside of tech, I’m deeply connected to my roots — helping in my family business that spans hardware, welding, and distribution. This experience has taught me discipline, accountability, and the value of smart decision-making — traits I bring into my work as a developer and leader.</p>
+      <p>I’m also deeply interested in defense forces, geopolitics, and current affairs, and I believe discipline and strategy are just as important in coding as they are in life.</p>
+      <p>Whether it’s a creative side project, a startup idea, or contributing to open source — I’m always excited to learn, build, and collaborate. Let’s debug problems, push boundaries, and code something meaningful — together.</p>
+      <a href="Rajendra's CV" download="Rajendra_CV.pdf" class="btn-download" aria-label="Download Rajendra's Curriculum Vitae">Download CV</a>
+    </div>
+  </main>
+</body>
+</html>
+

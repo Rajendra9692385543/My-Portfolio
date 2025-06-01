@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome - Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+  body, html {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  .container {
+    text-align: center;
+    padding: 40px;
+    max-width: 480px;
+    background: rgba(255 255 255 / 0.12);
+    border-radius: 28px;
+    box-shadow: 0 8px 30px rgb(255 255 255 / 0.3);
+    
+    animation: fadeInScale 1.2s ease forwards;
+    opacity: 0;
+  }
+  @keyframes fadeInScale {
+    0% {opacity: 0; transform: scale(0.8);}
+    100% {opacity: 1; transform: scale(1);}
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 15px 0 35px;
+    line-height: 1.4;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.18);
+  }
+  .avatar {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.35);
+    object-fit: cover;
+    animation: avatarBounce 2.8s ease infinite;
+  }
+  @keyframes avatarBounce {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+  }
+  button#welcomeBtn {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    border: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    color: #582900;
+    font-weight: 700;
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 6px 20px #fda085cc;
+    transition: all 0.3s ease;
+    
+    letter-spacing: 2px;
+  }
+  button#welcomeBtn:hover {
+    box-shadow: 0 8px 30px #f6d365cc;
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #fda085, #f6d365);
+  }
+  button#welcomeBtn:active {
+    transform: scale(0.95);
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main">
+    <img class="avatar" src="avatar.png" alt="Avatar of Rajendra Das" />
+    <h1>Welcome!</h1>
+    <p>Hello, I'm Rajendra Das.<br/>A creative frontend developer passionate about crafting playful web experiences.</p>
+    <button id="welcomeBtn" aria-label="Navigate to the main portfolio page">WELCOME</button>
+  </div>
+  <script>
+    const btn = document.getElementById('welcomeBtn');
+    btn.addEventListener('click', () => {
+      window.location.href = 'main.html';
+    });
+  </script>
+</body>
+</html>
+

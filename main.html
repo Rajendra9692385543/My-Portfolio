@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Main Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+  body, html {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+  }
+  nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul li {
+    margin: 0 20px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #fda085;
+  }
+  .content {
+    text-align: center;
+    padding: 40px 20px 80px;
+    max-width: 900px;
+    flex-grow: 1;
+    width: 100%;
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+  }
+  /* Cards container */
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    flex-wrap: wrap;
+  }
+  /* Card styles */
+  .card {
+    width: 260px;
+    height: 320px;
+    perspective: 1200px;
+    cursor: pointer;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border-radius: 25px;
+  }
+  .card:hover .card-inner,
+  .card.hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  /* Front and back faces */
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.6rem;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  /* Front side styling */
+  .card-front {
+    background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%);
+    box-shadow: 0 8px 26px -6px #22c1c3cc;
+    
+    text-shadow:
+      0 0 6px rgba(0,0,0,0.15),
+      0 1px 2px rgba(0,0,0,0.35);
+  }
+  /* Back side styling */
+  .card-back {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 8px 26px -6px #00f2fecc;
+    font-size: 1rem;
+    font-weight: 500;
+    transform: rotateY(180deg);
+    color: #fafafa;
+    overflow-y: auto;
+    text-align: left;
+  }
+  .card-back p {
+    margin: 0;
+    line-height: 1.4;
+  }
+  /* Scrollbar styling for card back */
+  .card-back::-webkit-scrollbar {
+    width: 6px;
+  }
+  .card-back::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+  /* Small description title on back */
+  .card-back h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    .cards {
+      gap: 30px;
+    }
+  }
+  @media (max-width: 680px) {
+    .cards {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
+  }
+  /* Section heading style for new section */
+  section {
+    margin-top: 80px;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <h1>My Educational Journey</h1>
+    <div class="cards" role="list" aria-label="Educational journey cards">
+      <div class="card" role="listitem" tabindex="0" aria-label="School card">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">
+            School
+          </div>
+          <div class="card-back" aria-hidden="true">
+            <h3>Springfield Elementary</h3>
+            <p>Attended from 2003 to 2009. Focused on foundational subjects and extracurricular activities including art and sports.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" role="listitem" tabindex="0" aria-label="College card">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">
+            College
+          </div>
+          <div class="card-back" aria-hidden="true">
+            <h3>Riverside College</h3>
+            <p>Graduated in 2013 with a degree in Computer Science. Developed strong problem-solving skills and participated in coding clubs and hackathons.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card" role="listitem" tabindex="0" aria-label="University card">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">
+            University
+          </div>
+          <div class="card-back" aria-hidden="true">
+            <h3>State University</h3>
+            <p>Completed Master's in Software Engineering in 2016. Specialized in frontend technologies and user experience design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section aria-label="My Business Section">
+      <h1>My Business</h1>
+      <div class="cards" role="list" aria-label="Business cards">
+        <div class="card" role="listitem" tabindex="0" aria-label="Web Design Business card">
+          <div class="card-inner">
+            <div class="card-front" aria-hidden="false">
+              Web Design
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <h3>Creative Web Design</h3>
+              <p>Providing vibrant and user-friendly website designs that capture your brand's personality and engage customers effectively.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card" role="listitem" tabindex="0" aria-label="Consulting Business card">
+          <div class="card-inner">
+            <div class="card-front" aria-hidden="false">
+              Consulting
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <h3>Tech Consulting</h3>
+              <p>Offering expert advice to businesses on improving their digital presence, optimizing frontend workflows, and adopting modern technologies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card" role="listitem" tabindex="0" aria-label="Training Business card">
+          <div class="card-inner">
+            <div class="card-front" aria-hidden="false">
+              Training
+            </div>
+            <div class="card-back" aria-hidden="true">
+              <h3>Developer Training</h3>
+              <p>Conducting engaging workshops and courses on web development, frontend frameworks, and best practices to empower teams and individuals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
+
