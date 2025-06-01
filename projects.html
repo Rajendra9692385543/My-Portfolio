@@ -11,30 +11,161 @@
     height: 100%;
     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #333;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .content {
-    padding: 40px;
-    max-width: 800px;
+  .container {
+    width: 960px;
+    padding: 40px 20px 80px;
+    text-align: center;
+    flex-grow: 1;
   }
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #6a3c18;
   }
-  p {
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+  }
+  .card {
+    width: 260px;
+    height: 360px;
+    perspective: 1200px;
+    cursor: pointer;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border-radius: 25px;
+  }
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.6rem;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .card-front {
+    background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%);
+    box-shadow: 0 8px 26px -6px #22c1c3cc;
+    
+    text-shadow: 0 0 6px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.35);
+  }
+  .card-back {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 8px 26px -6px #00f2fecc;
+    font-size: 1rem;
+    font-weight: 500;
+    transform: rotateY(180deg);
+    color: #fafafa;
+    overflow-y: auto;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .card-back h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
     font-size: 1.2rem;
-    margin: 10px 0;
+  }
+  .card-back p {
+    margin: 0 0 18px;
+    line-height: 1.4;
+  }
+  .btn-link {
+    display: inline-block;
+    padding: 10px 30px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    
+  }
+  .btn-link:hover,
+  .btn-link:focus {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.8);
+    outline: none;
+  }
+  .card-back::-webkit-scrollbar {
+    width: 6px;
+  }
+  .card-back::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
   }
 </style>
 </head>
 <body>
-  <div class="content" role="main">
-    <h1>Projects</h1>
-    <p>Here are some of my projects that showcase my skills and creativity.</p>
+  <div class="container" role="main" aria-label="Projects section">
+    <h1>My Projects</h1>
+    <div class="cards" role="list" aria-label="List of project cards">
+      <div class="card" role="listitem" tabindex="0" aria-label="Playful Portfolio project">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">Playful Portfolio</div>
+          <div class="card-back" aria-hidden="true">
+            <h3>Playful Portfolio</h3>
+            <p>A vibrant portfolio with creative CSS and JS animations.</p>
+            <a href="https://example.com/playful-portfolio" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="Visit Playful Portfolio project website">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="card" role="listitem" tabindex="0" aria-label="Recipe App project">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">Recipe App</div>
+          <div class="card-back" aria-hidden="true">
+            <h3>Recipe App</h3>
+            <p>Colorful app to discover and share delightful recipes.</p>
+            <a href="https://example.com/recipe-app" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="Visit Recipe App project website">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="card" role="listitem" tabindex="0" aria-label="Game Arcade project">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">Game Arcade</div>
+          <div class="card-back" aria-hidden="true">
+            <h3>Game Arcade Site</h3>
+            <p>Retro-style arcade with classic games and animations.</p>
+            <a href="https://example.com/game-arcade" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="Visit Game Arcade project website">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="card" role="listitem" tabindex="0" aria-label="Blog Platform project">
+        <div class="card-inner">
+          <div class="card-front" aria-hidden="false">Blog Platform</div>
+          <div class="card-back" aria-hidden="true">
+            <h3>Blog Platform</h3>
+            <p>Modern blogging platform with rich editor and responsive design.</p>
+            <a href="https://example.com/blog-platform" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="Visit Blog Platform project website">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
